@@ -24,12 +24,7 @@ function Game() {
       return;
     }
 
-    const guessResults = checkGuess(newGuess, answer);
-    const wrongLetters = guessResults.filter((result) => {
-      return result.status != "correct";
-    });
-
-    if (wrongLetters.length === 0) {
+    if (newGuess === answer) {
       setGameWon(true);
       setGameOver(true);
     }
